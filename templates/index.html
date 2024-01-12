@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>CruiseHub - Explore Fleet</title>
+</head>
+<body>
+    <h1>Explore Fleet</h1>
+    <div class="car-list">
+        {% for car in cars %}
+            <div class="car">
+                <img src="{{ car.image_url }}" alt="{{ car.make }} {{ car.model }}">
+                <p>{{ car.make }} {{ car.model }} ({{ car.year }})</p>
+                <p>Price: ${{ car.price }}/day</p>
+                <!-- Add reservation button and other details as needed -->
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
